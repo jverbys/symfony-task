@@ -1,0 +1,14 @@
+security:
+    providers:
+        test_in_memory:
+            memory:
+                users:
+                    test: { password: '$2a$10$M4T7Bp7hzSCgflHCYqtHOuED2emYpV0PvmbOYTTrTkcBzfzQWJJAi', roles: 'ROLE_SUPER_ADMIN' }
+    firewalls:
+        main:
+            http_basic:
+                provider: test_in_memory
+liip_functional_test:
+    authentication:
+        username: "test"
+        password: "test123"

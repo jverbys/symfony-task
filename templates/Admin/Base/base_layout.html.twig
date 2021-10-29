@@ -1,0 +1,14 @@
+{% extends 'Admin/Base/base.html.twig' %}
+
+{% block title %}
+    {% block page_title %}{% endblock %}
+{% endblock %}
+{% block body %}
+    <div id="wrapper">
+        {% include "Admin/Base/sidebar.html.twig" %}
+        <div id="page-wrapper" class="gray-bg">
+            {% include "Admin/Base/header.html.twig" %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

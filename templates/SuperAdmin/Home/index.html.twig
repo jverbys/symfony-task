@@ -1,0 +1,24 @@
+{% extends 'Admin/Base/base_layout.html.twig' %}
+{% import 'Admin/Macros/Table/table_action_buttons.html.twig' as buttons %}
+{% block page_title %}{{ 'user_table_page_title'|trans({}, 'user') }}{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ 'home_header'|trans({}, 'home') }}</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-xs-12 float-e-margins">
+                        <p>Welcome SuperAdmin.</p>
+                        <a href="{{ path('app_super_admin_user_index') }}">
+                            {{ 'manage_users'|trans({}, 'home') }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% macro printSidebarMenuItem(route, icon, text) %}
+    <li class="{% if app.request.attributes.get('_route') == route %}active{% endif %}">
+        <a href="{{ path(route) }}">
+        {% if icon %}
+            <i class="{{ icon }}"></i>
+        {% endif %}
+            <span>{{ text }}</span>
+        </a>
+    </li>
+{% endmacro %}

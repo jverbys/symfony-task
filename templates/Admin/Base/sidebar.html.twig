@@ -1,0 +1,46 @@
+{% import 'Admin/Macros/Sidebar/sidebar_menu.html.twig' as sidebarMenu %}
+<nav class="navbar-default navbar-static-side">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            {% if app.user %}
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    {% if app.user.name is defined and app.user.name is not empty %}
+                                        <strong class="font-bold">{{ app.user.name }} {{ app.user.lastname }}</strong>
+                                        <b class="caret"></b>
+                                    {% else %}
+                                        <strong class="font-bold">{{ app.user.username }}</strong> <b class="caret"></b>
+                                    {% endif %}
+                                </span>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li>
+                                <a href="{{ path('app_user_logout') }}">
+                                    {{ 'sidebar_user_profile_logout_link'|trans({}, 'sidebar') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            {% endif %}
+            {% if is_granted('ROLE_SUPER_ADMIN') %}
+                {{ sidebarMenu.printSidebarMenuItem(
+                'app_super_admin_user_index',
+                'fa fa-user',
+                'sidebar_menu_user'|trans({}, 'sidebar')
+                ) }}
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ sidebarMenu.printSidebarMenuItem(
+                'app_admin_user_index',
+                'fa fa-user',
+                'sidebar_menu_user'|trans({}, 'sidebar')
+                ) }}
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,6 @@
+parameters:
+    autoload_directories:
+        - %currentWorkingDirectory%/src/Migrations
+        - %currentWorkingDirectory%/tests
+    autoload_files:
+        - %currentWorkingDirectory%/vendor/autoload.php

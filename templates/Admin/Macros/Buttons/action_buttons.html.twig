@@ -1,0 +1,24 @@
+{% macro editButton(editUrl) %}
+    <a class="btn btn-sm btn-warning"
+       data-bind-js="showModal"
+       data-modal-url="{{ editUrl }}">
+        <i class="fa fa-edit fa-fw"></i>
+        {{ 'form_button_edit'|trans({}, 'form') }}
+    </a>
+{% endmacro %}
+{% macro deleteButton(deleteUrl) %}
+    <a href="{{ deleteUrl }}"
+       data-alert-message="{{ 'messages_delete_alert_message'|trans({}, 'messages') }}"
+       data-alert-title="{{ 'messages_delete_alert_message_title'|trans({}, 'messages') }}"
+       data-alert-title-success="{{ 'messages_delete_alert_message_success'|trans({}, 'messages') }}"
+       data-alert-confirm-btn="{{ 'messages_alert_confirm_btn'|trans({}, 'messages') }}"
+       data-alert-cancel-btn="{{ 'messages_alert_cancel_btn'|trans({}, 'messages') }}"
+       data-alert-close-btn="{{ 'messages_alert_close_btn'|trans({}, 'messages') }}"
+       data-alert-message-success=""
+       data-alert-title-error="{{ 'messages_delete_alert_error_message_title'|trans({}, 'messages') }}"
+       data-bind-js="sendRequestWithAlert"
+       class="btn btn-sm btn-danger">
+        <i class="fa fa-times"></i>
+        {{ 'form_button_delete'|trans({}, 'form') }}
+    </a>
+{% endmacro %}

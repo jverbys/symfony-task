@@ -1,0 +1,60 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            {{ 'user_create_header'|trans({}, 'user') }}
+            <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+        </div>
+        <form action="{{ path('app_admin_user_create') }}"
+              method="post"
+              enctype="multipart/form-data"
+              data-bind-js="modalForm"
+              data-modal-form-success-alert-title="{{ 'messages_modal_form_success_alert_title'|trans({},'messages') }}"
+              data-alert-close-btn="{{ 'messages_alert_close_btn'|trans({}, 'messages') }}"
+              novalidate>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ form_errors(form) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                {{ form_row(form.name) }}
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                {{ form_row(form.lastname) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                {{ form_row(form.email) }}
+                                {{ form_row(form.roles, {'multiple':false}) }}
+                                {{ form_row(form._token) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        {{ form_row(form.username) }}
+                        <div class="form-group {% if form.plainPassword.vars.errors|length %}has-error{% endif %}">
+                            {{ form_label(form.plainPassword.first) }}
+                            {{ form_widget(form.plainPassword.first) }}
+                            {{ form_errors(form.plainPassword) }}
+                        </div>
+                        <div class="form-group {% if form.plainPassword.vars.errors|length %}has-error{% endif %}">
+                            {{ form_label(form.plainPassword.second) }}
+                            {{ form_widget(form.plainPassword.second) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{ 'form_btn_close'|trans({},'form') }}</button>
+                <button type="submit" class="btn btn-primary">{{ 'form_btn_save'|trans({}, 'form') }}</button>
+            </div>
+        </form>
+    </div>
+</div>

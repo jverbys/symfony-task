@@ -1,0 +1,73 @@
+{% extends 'Admin/Base/base_layout.html.twig' %}
+{% import 'Admin/Macros/Table/table_action_buttons.html.twig' as buttons %}
+{% block page_title %}{{ 'user_table_page_title'|trans({}, 'user') }}{% endblock %}
+{% block content %}
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>{{ 'user_table_header'|trans({}, 'user') }}</h2>
+        </div>
+    </div>
+    <div class="wrapper wrapper-content">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>{{ 'user_table_header'|trans({}, 'user') }}</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-xs-12 float-e-margins">
+                        <a href="#"
+                           data-bind-js="showModal"
+                           data-modal-url="{{ path('app_admin_user_create') }}"
+                           class="btn btn-info pull-right">
+                            <i class="fa fa-plus fa-fw"></i> {{ 'user_btn_create_client'|trans({}, 'user') }}
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped table-vertical-align-middle">
+                                <thead>
+                                <tr>
+                                    <th>{{ 'user_table_col_name'|trans({}, 'user') }}</th>
+                                    <th>{{ 'user_table_col_email'|trans({}, 'user') }}</th>
+                                    <th>{{ 'user_table_col_deleted'|trans({}, 'user') }}</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                {% for user in users %}
+                                    <tr>
+                                        <td>{{ user.name }} {{ user.lastname }}</td>
+                                        <td>{{ user.email }}</td>
+                                        <td>{{ user.deleted }}</td>
+                                        <td class="project-actions">
+                                            <a class="btn btn-sm btn-warning"
+                                               data-bind-js="showModal"
+                                               data-modal-url="{{ path('app_admin_user_edit', {'user' : user.id}) }}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            {{ buttons.tableActionButtons(
+                                            false,
+                                            path('app_admin_delete', {'user' : user.id})) }}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if users.pageCount > 1 %}
+                <div class="ibox-footer">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="navigation text-center">
+                                {{ knp_pagination_render(users) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

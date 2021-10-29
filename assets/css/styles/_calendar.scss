@@ -1,0 +1,103 @@
+.fc-view-container {
+  position: relative;
+}
+
+th.fc-resource-cell {
+  padding: 10px 0;
+}
+
+.fc-unthemed .fc-today {
+  background: #fff;
+}
+
+.fc-bgevent {
+  background: #cccccc;
+}
+
+.fc-toolbar .fc-center h2 {
+  margin-top: 0;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.fc-toolbar button:focus {
+  outline: 0;
+}
+
+.fc-toolbar button:hover {
+  background-color: #f5f5f5;
+}
+.fc .fc-toolbar>*>* {
+  margin-left: 6px;
+}
+
+th.fc-resource-cell {
+  overflow: hidden;
+}
+
+.calendar-loader-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 5;
+}
+
+.calendar-info {
+  text-align: center;
+  font-weight: 700;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20%;
+}
+
+.fc-view-container {
+  width: 100%;
+}
+
+.fc-view-container .fc-view {
+  overflow-x: scroll;
+}
+
+.reservation-calendar div.fc-scroller.fc-time-grid-container {
+  overflow-y: hidden !important;
+}
+
+.calendar-nav-date-pick {
+  width: 40%;
+  text-transform: capitalize;
+}
+
+@media (max-width: $grid-float-breakpoint) {
+  .calendar-navigation.calendar-navigation-responsive {
+    width: 100%;
+    .calendar-nav-button {
+      width: 15%;
+      padding: 6px 0;
+    }
+
+    .calendar-nav-button-today {
+      width: 30%;
+    }
+
+    .calendar-nav-date-pick {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .calendar-navigation.calendar-navigation-responsive {
+    .calendar-nav-button-today {
+      display: none;
+    }
+
+    .calendar-nav-date-pick {
+      width: 70%;
+    }
+  }
+}

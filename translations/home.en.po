@@ -1,0 +1,5 @@
+msgid "home_header"
+msgstr "Home"
+
+msgid "manage_users"
+msgstr "Manage Users"

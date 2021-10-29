@@ -1,0 +1,54 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: VERSION\n"
+"POT-Creation-Date: 2015-11-12 18:00+0000\n"
+"PO-Revision-Date: 2015-11-12 18:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE TEAM <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "messages_data_save_success_title"
+msgstr "Success"
+
+msgid "messages_data_save_success"
+msgstr "Data successfully saved."
+
+msgid "messages_data_save_success_title"
+msgstr "messages_data_save_success_title"
+
+msgid "messages_data_save_success"
+msgstr "Data saved successfully."
+
+msgid "messages_delete_alert_message_title"
+msgstr "Attention"
+
+msgid "messages_delete_alert_message"
+msgstr "Do you really want to delete this data?"
+
+msgid "messages_delete_alert_message_success"
+msgstr "messages_delete_alert_message_success"
+
+msgid "messages_delete_alert_message_success"
+msgstr "Data deleted successfully."
+
+msgid "messages_delete_alert_error_message_title"
+msgstr "Error"
+
+msgid "messages_modal_form_extra_error_alert_title"
+msgstr "Alert"
+
+msgid "messages_modal_form_success_alert_title"
+msgstr "Data saved successfully"
+
+msgid "messages_alert_confirm_btn"
+msgstr "Ok"
+
+msgid "messages_alert_cancel_btn"
+msgstr "Cancel"
+
+msgid "messages_alert_close_btn"
+msgstr "Close"

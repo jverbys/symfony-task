@@ -1,0 +1,23 @@
+.nav > li.has-active-children {
+  border-left: 4px solid #19aa8d;
+  background: #293846;
+  color: #fff;
+}
+
+.nav > li.has-active-children > a {
+  color: #fff;
+}
+
+.mini-navbar {
+  .nav.nav-second-level.collapse {
+    opacity: 1;
+  }
+
+  .nav.nav-second-level.collapsing {
+    height: auto !important;
+  }
+
+  .metismenu .collapse a {
+    display: block !important;
+  }
+}

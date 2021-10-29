@@ -1,0 +1,99 @@
+textarea {
+  max-width: 100%;
+}
+
+select.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.form-group fieldset {
+  margin-bottom: 10px;
+}
+.form-group fieldset legend {
+  padding: 0 0 4px 10px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #676a6c;
+}
+
+.embeded-form {
+  border: 1px solid #f5f5f5;
+  padding: 15px;
+}
+
+.form-tab-list {
+  margin-bottom: 20px;
+}
+
+.form-tab-list li.has-error > a,
+.form-tab-list li.has-error > a:focus {
+  color: #ed5565;
+}
+
+.has-error .help-block {
+  color: #ed5565;
+}
+
+.form-inline .form-group select {
+  width: 100%;
+}
+
+.checkbox-inline {
+  word-wrap: break-word;
+}
+
+.birthday-input-wrap select{
+  padding: 0 2px;
+}
+
+textarea.form-control {
+  min-height: 106px;
+}
+
+textarea.form-control.min-height-177 {
+  min-height: 177px;
+}
+
+.checkbox-inline {
+  line-height: 23px;
+  vertical-align: middle;
+}
+
+.form-inline.form-inline-dont-brake .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.selectize-input input {
+  min-width: 110px;
+}
+
+@media (max-width: $grid-float-breakpoint) {
+  .form-control,
+  .single-line {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 995px) {
+  .filter-form.form-inline .form-group {
+    display: block;
+    margin-bottom: $form-group-margin-bottom;
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  .filter-form.form-inline .form-group input {
+    display: block;
+    width: 100%;
+  }
+  .filter-form.form-inline .form-group .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+  }
+  .filter-form.form-inline .form-group .input-group .input-group-addon {
+    width: 1%;
+  }
+}

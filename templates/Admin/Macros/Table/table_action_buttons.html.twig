@@ -1,0 +1,28 @@
+{% macro tableActionButtons(editUrl, deleteUrl) %}
+    {% if editUrl %}
+        <a class="btn btn-sm btn-warning"
+           data-bind-js="showModal"
+           data-modal-url="{{ editUrl }}">
+            <i class="fa fa-edit fa-fw"></i>
+        </a>
+    {% endif %}
+
+    {% if deleteUrl %}
+        <a href="{{ deleteUrl }}"
+           data-alert-message="{{ 'messages_delete_alert_message'|trans({}, 'messages') }}"
+           data-alert-title="{{ 'messages_delete_alert_message_title'|trans({}, 'messages') }}"
+           data-alert-title-success="{{ 'messages_delete_alert_message_success'|trans({}, 'messages') }}"
+           data-alert-message-success=""
+           data-alert-title-error="{{ 'messages_delete_alert_error_message_title'|trans({}, 'messages') }}"
+           data-bind-js="sendRequestWithAlert"
+           class="btn btn-sm btn-danger">
+            <i class="fa fa-times"></i>
+        </a>
+    {% endif %}
+{% endmacro %}
+
+{% macro tableCreateButton(createUrl, text) %}
+    <a href="{{ createUrl }}" class="btn btn-info pull-right">
+        <i class="fa fa-plus fa-fw"></i> {{ text }}
+    </a>
+{% endmacro %}

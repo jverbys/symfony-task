@@ -1,0 +1,54 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: auto
+            cost: 10
+        App\Entity\User:
+            algorithm: plaintext
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_ADMIN, ROLE_USER]
+    providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, user_db_provider]
+        in_memory:
+            memory:
+                users:
+                    superadmin:
+                        password: '$argon2id$v=19$m=65536,t=4,p=1$MoLPUVJhxAIwNI7BLd934Q$1SJ3QWWEzNwtJglmhnqDcMp9XYHWKB5EYT/KAvjYAp0'
+                        roles: 'ROLE_SUPER_ADMIN'
+        user_db_provider:
+            entity:
+                class: App\Entity\User
+                property: 'username'
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: ~
+            provider: chain_provider
+            form_login:
+                provider: chain_provider
+                login_path: app_user_login
+                check_path: app_user_login
+                always_use_default_target_path: true
+                default_target_path: app_super_admin_user_index
+            logout:
+                path:   app_user_logout
+                target: app_user_login
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/superadmin/home, roles: ROLE_ADMIN }
+        - { path: ^/superadmin, roles: ROLE_SUPER_ADMIN }

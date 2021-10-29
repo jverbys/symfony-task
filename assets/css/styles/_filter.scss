@@ -1,0 +1,11 @@
+.filter-wrap {
+  margin-bottom: 15px;
+}
+
+@media (max-width: $grid-float-breakpoint) {
+  .filter-buttons button{
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}

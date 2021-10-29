@@ -1,0 +1,13 @@
+.mobile-pagination {
+  display: none;
+}
+
+@media (max-width: $grid-float-breakpoint) {
+  .mobile-pagination {
+    display: block;
+  }
+
+  .main-pagination {
+    display: none;
+  }
+}

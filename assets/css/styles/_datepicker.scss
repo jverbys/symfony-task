@@ -1,0 +1,86 @@
+.datepicker-dropdown.datepicker-orient-bottom:before {
+  top: -7px;
+}
+
+.datepicker-dropdown.datepicker-orient-bottom:after {
+  top: -6px;
+}
+
+.datepicker-dropdown.datepicker-orient-top:before {
+  bottom: -7px;
+  border-bottom: 0;
+  border-top: 7px solid #999;
+}
+
+.datepicker-dropdown.datepicker-orient-top:after {
+  bottom: -6px;
+  border-bottom: 0;
+  border-top: 6px solid #fff;
+}
+
+.datepicker-expanded table tr td.day{
+  background-color: #f5f5f5;
+}
+
+.datepicker table tr td.day.today,
+.datepicker table tr td.day.today:hover,
+.datepicker table tr td.day.today.disabled,
+.datepicker table tr td.day.today.disabled:hover,
+.datepicker table tr td.day.active,
+.datepicker table tr td.day.active:hover,
+.datepicker table tr td.day.active.disabled,
+.datepicker table tr td.day.active.disabled:hover {
+  color: #000000;
+  background-color: transparent;
+  border: 1px solid #1ab394 !important;
+  text-shadow: none;
+}
+
+.datepicker table tr td.day {
+  color: rgba(#000, 0.95);
+}
+
+
+
+.datepicker table tr td.disabled,
+.datepicker table tr td.disabled:hover {
+  color: rgba(#000, 0.44);
+  border: none;
+  background-color: transparent;
+}
+
+.datepicker .day {
+  border-radius: 0;
+}
+
+.datepicker .day.day-user-available {
+  background-color: #ddffde;
+}
+
+.datepicker-expanded {
+  .datepicker table {
+    width: 100%;
+  }
+  .datepicker-inline {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+.input-daterange .input-group-addon {
+  border-width: 1px;
+}
+
+@media (min-width: 420px) {
+  .datepicker-expanded {
+    .datepicker table {
+      width: auto;
+    }
+    .datepicker-inline {
+      width: auto;
+    }
+    .datepicker table tr td, .datepicker table tr th {
+      padding: 5px 14px;
+    }
+  }
+}

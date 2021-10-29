@@ -1,0 +1,94 @@
+.gutter-10 > [class*='col-'] {
+  padding-right:10px;
+  padding-left:10px;
+}
+
+.page-heading {
+  padding-bottom: 10px;
+}
+
+.pagination {
+  margin: 5px 0;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+
+.padding-top-40 {
+  padding-top: 40px !important;
+}
+
+.padding-left-8 {
+  padding-left: 8px !important;
+}
+
+#page-wrapper {
+  padding: 0;
+}
+
+.header-wrap {
+  margin-left: 0px;
+}
+
+@media(min-width: $grid-float-breakpoint) {
+  .align-columns-height {
+    display: table;
+    width: 100%;
+  }
+  .align-columns-height > div {
+    display: table-cell;
+    float: none;
+  }
+
+  #page-wrapper {
+    padding: 0 15px;
+  }
+
+  .header-wrap {
+    margin-left: -15px;
+  }
+  .margin-sm-bottom-15 {
+    margin-bottom: 15px;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.max-width-300 {
+  max-width: 300px;
+}
+
+.min-width-100 {
+  min-width: 100px;
+}
+
+.min-width-246 {
+  min-width: 246px;
+}
+
+.min-width-160 {
+  min-width: 160px;
+}
+
+.padding-left-30 {
+  padding-left: 30px !important;
+}
+
+.width-120 {
+  width: 120px;
+}
+
+.p-r-0 {
+  padding-right: 0 !important;
+}
+
+.p-l-0 {
+  padding-left: 0 !important;
+}

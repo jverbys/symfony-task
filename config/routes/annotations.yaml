@@ -1,0 +1,23 @@
+controllers:
+    resource: ../../src/Controller/
+    type: annotation
+
+app_super_admin_user:
+    resource: 'Controller/SuperAdmin/User/'
+    prefix: '/superadmin/user/'
+    type:     annotation
+
+app_super_admin:
+    resource: 'Controller/SuperAdmin'
+    prefix: '/superadmin/'
+    type:     annotation
+
+app_admin_user:
+    resource: 'Controller/Admin/User/'
+    prefix: '/admin/user/'
+    type:     annotation
+
+app_security:
+    resource: 'Controller/Admin/SecurityController.php'
+    prefix: '/admin/'
+    type:     annotation
