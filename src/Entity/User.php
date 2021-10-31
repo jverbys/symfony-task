@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Entity\Traits\SoftDeletableEntity;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use App\Entity\Interfaces\SoftDeletableInterface;
@@ -13,6 +14,7 @@ use App\Entity\Interfaces\SoftDeletableInterface;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity("username")
  */
 class User implements SoftDeletableInterface, UserInterface
 {
