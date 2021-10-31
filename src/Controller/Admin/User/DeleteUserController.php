@@ -10,7 +10,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class DeleteUserController
@@ -26,9 +25,16 @@ class DeleteUserController extends AbstractController
      *
      * @param DeleteUserUseCase $useCase
      * @return JsonResponse
+     * @throws UnableToDeleteUser
      */
     public function deleteAction(User $user, DeleteUserUseCase $useCase)
     {
+        $authenticatedUser = $this->getUser();
+
+        if ($user->getUsername() === $authenticatedUser->getUsername()) {
+            throw new UnableToDeleteUser();
+        }
+
         $useCase->delete($user);
 
         return new JsonResponse();
