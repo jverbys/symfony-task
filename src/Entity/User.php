@@ -21,6 +21,7 @@ class User implements SoftDeletableInterface, UserInterface
     use SoftDeletableEntity;
 
     const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
     const ROLE_DEFAULT = 'ROLE_USER';
 
     /**

@@ -18,7 +18,7 @@ security:
             memory:
                 users:
                     superadmin:
-                        password: '$argon2id$v=19$m=65536,t=4,p=1$MoLPUVJhxAIwNI7BLd934Q$1SJ3QWWEzNwtJglmhnqDcMp9XYHWKB5EYT/KAvjYAp0'
+                        password: '$2y$10$/KYxD3ruEtIrRMQznO3z1OaEp8Rii7T8VCcD8eboP52I1CM3sfTri'
                         roles: 'ROLE_SUPER_ADMIN'
         user_db_provider:
             entity:
@@ -38,7 +38,7 @@ security:
                 login_path: app_user_login
                 check_path: app_user_login
                 always_use_default_target_path: true
-                default_target_path: app_admin_user_index
+                default_target_path: app_redirect
             logout:
                 path:   app_user_logout
                 target: app_user_login
